@@ -158,7 +158,7 @@ def fetch_product_info(userquery: str) -> str:
 
 # Statically defined user functions for fast reference
 user_functions: Set[Callable[..., Any]] = {
-    fetch_weather, fetch_restaurant, fetch_budget, fetch_product_info
+    fetch_weather, fetch_restaurant, fetch_budget
 }
 
 # Define the function to run the agent
@@ -210,10 +210,17 @@ def on_chat_start():
         conn_str=project_connection_string,
     )
 
-    # Initialize agent toolset with user functions
-    functions = FunctionTool(user_functions)
-    toolset = ToolSet()
-    toolset.add(functions)
+    # Initialize agent AI search tool and add the search index connection ID and index name
+    connection_id = os.getenv("PROJECT_CONNECTION_ID_AZURE_AI_SEARCH")
+    index_name = "travel-product-index"
+    ai_search = AzureAISearchTool(
+        index_connection_id=connection_id, 
+        index_name=index_name,
+        query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,
+        top_k=5,
+    )
+
+    functions = FunctionTool(functions={fetch_weather, fetch_restaurant, fetch_budget})
 
     # Create a new agent with the toolset
     agent = project_client.agents.create_agent(
@@ -222,13 +229,9 @@ def on_chat_start():
         instructions="""
             You are an AI Travel Agent. 
             You will answer questions about travel based on the tools provided.
-            You have access to the following tools:
-            - fetch_weather - fetches the weather information for a given location.
-            - fetch_restaurant - fetches restaurant information for a given location.
-            - fetch_budget - fetches budget information for a given location.
-            - fetch_product_info - fetches product information such as travel insurance, luggage, wifi plan, accessories and other products based on user queries.
         """, 
-        toolset=toolset,
+        tools=functions.definitions + ai_search.definitions,
+        tool_resources=ai_search.resources
     )
 
     print(f"Created agent, ID: {agent.id}")
