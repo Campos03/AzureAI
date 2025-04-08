@@ -279,5 +279,15 @@ async def set_starters():
             label="Budget Recommendations",
             message="If I have a budget of $300 for 4 days, where should I travel?",
             icon="/public/calculator.svg",
+            ),
+        cl.Starter(
+            label="Suitcase Products",
+            message="What suitcases do you have?",
+            icon="/public/suitcase.svg",
+            ),
+        cl.Starter(
+            label="Handcarry Bags",
+            message="Do you have any bags available?",
+            icon="/public/briefcase.svg",
             )
         ]
