@@ -76,90 +76,34 @@ def fetch_budget() -> str:
     budget_json = json.dumps({"budget": mock_budget_data})
     return budget_json
 
-def fetch_product_info(userquery: str) -> str:
-    """
-    Fetches the product information for the specified user query.
-    :return: product information.
-    :rtype: str
-    """
-
-    from azure.search.documents import SearchClient
-    from azure.search.documents.models import VectorizableTextQuery
-    from azure.core.credentials import AzureKeyCredential
-    from openai import AzureOpenAI
-
-    azure_search_service_admin_key = os.getenv("AZURE_SEARCH_ADMIN_KEY")
-    azure_search_service_endpoint = os.getenv("AZURE_SEARCH_SERVICE_ENDPOINT")
-    azure_search_service_index_name = os.getenv("AZURE_SEARCH_INDEX_NAME")
-    azure_openai_api_version = os.getenv("AZURE_OPENAI_API_VERSION")
-    azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-    azure_openai_key = os.getenv("AZURE_OPENAI_API_KEY")
-    azure_openai_deployment = os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME")
-
-    # Get credential from Azure AI Search Admin key
-    credential = AzureKeyCredential(azure_search_service_admin_key)
-    search_client = SearchClient(endpoint=azure_search_service_endpoint, 
-                                credential=credential, 
-                                index_name=azure_search_service_index_name)
-
-    # Azure OpenAI client
-    openai_client = AzureOpenAI(
-        api_version=azure_openai_api_version,
-        azure_endpoint=azure_openai_endpoint,
-        api_key=azure_openai_key)
-
-    # Provide instructions to the model
-    SYSTEM_PROMPT="""
-    You are an AI assistant that helps users learn from the information found in the source material.
-    Answer the query using only the sources provided below.
-    Use bullets if the answer has multiple points.
-    If the answer is longer than 3 sentences, provide a summary.
-    Answer ONLY with the facts listed in the list of sources below. Cite your source when you answer the question
-    If there isn't enough information below, say you don't know.
-    Do not generate answers that don't use the sources below.
-    Query: {query}
-    Sources:\n{sources}
-    """
-
-    # User Query
-    query = userquery 
-
-    # Convert query into vector form
-    vector_query = VectorizableTextQuery(text=query, 
-                                        k_nearest_neighbors=50, 
-                                        fields="text_vector",
-                                        weight=1)
-
-    results = search_client.search(
-        query_type="semantic", 
-        semantic_configuration_name='my-semantic-config',
-        search_text=query,
-        vector_queries= [vector_query],
-        select=["title","chunk"],
-        top=5,
-    )
-
-    # Use a unique separator to make the sources distinct. 
-    # We chose repeated equal signs (=) followed by a newline because it's unlikely the source documents contain this sequence.
-    sources_formatted = "=================\n".join([f'TITLE: {document["title"]}, CONTENT: {document["chunk"]}' for document in results])
-
-    response = openai_client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": SYSTEM_PROMPT.format(query=query, sources=sources_formatted)
-            }
-        ],
-        model=azure_openai_deployment
-    )
-
-    return response.choices[0].message.content
-
-
 # Statically defined user functions for fast reference
 user_functions: Set[Callable[..., Any]] = {
-    fetch_weather, fetch_restaurant, fetch_budget, fetch_product_info
+    fetch_weather, fetch_restaurant, fetch_budget
 }
+
+def reformat_citations(content_block):
+    annotations = content_block.get("annotations", [])
+    paragraph = content_block["value"]
+    
+    # Map citation_title -> set of placeholders
+    citation_map = {}
+    for annotation in annotations:
+        if annotation["type"] == "url_citation":
+            placeholder_text = annotation["text"]
+            citation_title = annotation["url_citation"]["title"]
+            citation_map.setdefault(citation_title, set()).add(placeholder_text)
+
+    # Remove all placeholders from the paragraph
+    for placeholders in citation_map.values():
+        for placeholder_text in placeholders:
+            paragraph = paragraph.replace(placeholder_text, "")
+
+    # If there's at least one citation, append "Source: ..." at the end
+    if citation_map:
+        sources = ", ".join(citation_map.keys())
+        paragraph = paragraph.strip() + f" Source: {sources}"
+
+    return paragraph
 
 # Define the function to run the agent
 def run_agent(user_input, project_client, thread, agent):  
@@ -179,13 +123,22 @@ def run_agent(user_input, project_client, thread, agent):
 
     # Step 6: Display the Agent's Response
     elif run.status == 'completed':
-            # Fetch all messages in the thread
-            messages = project_client.agents.list_messages(thread_id=thread.id)
-            if messages.data:
-                agent_response = messages.data[0].content[0].text.value # Get the last assistant message
-                print(f"Agent Response: {agent_response}") 
+        # Fetch all messages in the thread
+        messages = project_client.agents.list_messages(thread_id=thread.id)
+        if messages.data:
+            agent_message = messages.data[0]  # Get the last assistant message
+            content_block = agent_message.content[0].text
+
+            # Check if there are annotations before reformatting the response
+            if content_block.get("annotations"):
+                # Reformat the response to replace placeholders with citation titles
+                agent_response = reformat_citations(content_block)
             else:
-                print("No messages found.")
+                agent_response = content_block["value"]
+
+            print(f"Agent Response: {agent_response}")
+        else:
+            print("No messages found.")
     
     return agent_response
 
@@ -210,11 +163,22 @@ def on_chat_start():
         conn_str=project_connection_string,
     )
 
+    # Initialize agent AI search tool and add the search index connection ID and index name
+    connection_id = os.getenv("PROJECT_CONNECTION_ID_AZURE_AI_SEARCH")
+    index_name = "travel-product-index"
+    ai_search = AzureAISearchTool(
+        index_connection_id=connection_id, 
+        index_name=index_name,
+        query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,
+        top_k=5,
+    )
+
     # Initialize agent toolset with user functions
     functions = FunctionTool(user_functions)
     toolset = ToolSet()
     toolset.add(functions)
-
+    toolset.add(ai_search)
+    
     # Create a new agent with the toolset
     agent = project_client.agents.create_agent(
         model="gpt-4o", 
@@ -222,13 +186,9 @@ def on_chat_start():
         instructions="""
             You are an AI Travel Agent. 
             You will answer questions about travel based on the tools provided.
-            You have access to the following tools:
-            - fetch_weather - fetches the weather information for a given location.
-            - fetch_restaurant - fetches restaurant information for a given location.
-            - fetch_budget - fetches budget information for a given location.
-            - fetch_product_info - fetches product information such as travel insurance, luggage, wifi plan, accessories and other products based on user queries.
+            When asked questions about products, you will use the Azure AI Search tool to find relevant products.
         """, 
-        toolset=toolset,
+        toolset=toolset
     )
 
     print(f"Created agent, ID: {agent.id}")
