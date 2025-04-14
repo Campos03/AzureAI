@@ -1,0 +1,618 @@
+{
+  "projectFileVersion": "2023-04-01",
+  "stringIndexType": "Utf16CodeUnit",
+  "metadata": {
+    "projectKind": "Conversation",
+    "settings": {
+      "confidenceThreshold": 0.0,
+      "normalizeCasing": false,
+      "augmentDiacritics": false
+    },
+    "projectName": "MyProject1",
+    "multilingual": false,
+    "description": "",
+    "language": "en-us"
+  },
+  "assets": {
+    "projectKind": "Conversation",
+    "intents": [
+      { "category": "None" },
+      { "category": "BookTable" },
+      { "category": "OrderFood" },
+      { "category": "CheckOpeningHours" }
+    ],
+    "entities": [
+      {
+        "category": "Date",
+        "compositionSetting": "combineComponents",
+        "prebuilts": [
+          { "category": "DateTime" }
+        ]
+      },
+      {
+        "category": "Number",
+        "compositionSetting": "combineComponents",
+        "prebuilts": [
+          { "category": "Quantity.Number" }
+        ]
+      },
+      {
+        "category": "Dish",
+        "compositionSetting": "combineComponents"
+      }
+    ],
+    "utterances": [
+      {
+        "text": "Can you help me book a table for a group of 4 for a special occasion on September 20th at 6 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 44, "length": 1 },
+          { "category": "Date", "offset": 72, "length": 23 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need to make a reservation for a group of 8 for a company dinner on August 15th at 8 PM.",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 44, "length": 1 },
+          { "category": "Date", "offset": 70, "length": 19 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I book a table for a group of 6 for a holiday party on July 4th at 7 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 34, "length": 1 },
+          { "category": "Date", "offset": 59, "length": 16 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I would like to reserve a table for a group of 10 for a bridal shower on June 10th at 6 PM.",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 47, "length": 2 },
+          { "category": "Date", "offset": 73, "length": 17 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can you help me make a reservation for a business lunch for 4 people on May 1st at 12 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 60, "length": 1 },
+          { "category": "Date", "offset": 72, "length": 16 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I get a medium rare steak with a baked potato and a side of sautéed mushrooms?",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 10, "length": 1 },
+          { "category": "Dish", "offset": 12, "length": 17 },
+          { "category": "Number", "offset": 35, "length": 1 },
+          { "category": "Dish", "offset": 37, "length": 12 },
+          { "category": "Number", "offset": 54, "length": 1 },
+          { "category": "Dish", "offset": 64, "length": 17 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I would like to order a vegetarian lasagna and a Caesar salad on the side.",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 22, "length": 1 },
+          { "category": "Dish", "offset": 24, "length": 18 },
+          { "category": "Number", "offset": 47, "length": 1 },
+          { "category": "Dish", "offset": 49, "length": 12 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need to place an order for a family meal deal, which includes a whole roasted chicken, 8 mashed potatoes, and two large garden salads.",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 64, "length": 1 },
+          { "category": "Dish", "offset": 66, "length": 21 },
+          { "category": "Number", "offset": 89, "length": 1 },
+          { "category": "Dish", "offset": 91, "length": 15 },
+          { "category": "Number", "offset": 112, "length": 3 },
+          { "category": "Dish", "offset": 116, "length": 19 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I'm ordering for a party, can I get 50 chicken wings with a variety of sauces and a large platter of nachos.",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 36, "length": 2 },
+          { "category": "Dish", "offset": 39, "length": 38 },
+          { "category": "Number", "offset": 82, "length": 1 },
+          { "category": "Dish", "offset": 84, "length": 23 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I get a chicken Caesar wrap with a side of sweet potato fries and a chocolate milkshake?",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 10, "length": 1 },
+          { "category": "Dish", "offset": 12, "length": 19 },
+          { "category": "Number", "offset": 37, "length": 1 },
+          { "category": "Dish", "offset": 47, "length": 18 },
+          { "category": "Number", "offset": 70, "length": 1 },
+          { "category": "Dish", "offset": 72, "length": 19 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I'm ordering for a group, can I get a large pepperoni pizza, a veggie pizza, and a side of cheesy breadsticks.",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 36, "length": 1 },
+          { "category": "Dish", "offset": 38, "length": 21 },
+          { "category": "Number", "offset": 61, "length": 1 },
+          { "category": "Dish", "offset": 63, "length": 12 },
+          { "category": "Number", "offset": 81, "length": 1 },
+          { "category": "Dish", "offset": 91, "length": 18 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I get 3 grilled salmon and 2 sides of steamed vegetables",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 10, "length": 1 },
+          { "category": "Dish", "offset": 12, "length": 14 },
+          { "category": "Number", "offset": 31, "length": 1 },
+          { "category": "Dish", "offset": 42, "length": 18 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I would like to order a shrimp scampi with a side of garlic bread",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 22, "length": 1 },
+          { "category": "Dish", "offset": 24, "length": 13 },
+          { "category": "Number", "offset": 43, "length": 1 },
+          { "category": "Dish", "offset": 53, "length": 12 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need to place an order for 12 cheeseburger and 12 fries",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 29, "length": 2 },
+          { "category": "Dish", "offset": 32, "length": 12 },
+          { "category": "Number", "offset": 49, "length": 2 },
+          { "category": "Dish", "offset": 52, "length": 5 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I'm in the mood for some Chinese food, can I order beef and broccoli and a side of fried rice",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Dish", "offset": 51, "length": 17 },
+          { "category": "Number", "offset": 73, "length": 1 },
+          { "category": "Dish", "offset": 83, "length": 10 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What are your hours on weekdays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 23, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "When do you open and close on Fridays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 30, "length": 7 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Could you tell me your opening hours for this month?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 41, "length": 10 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What are your opening hours for today?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 32, "length": 5 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can you give me your hours of operation for the holiday season?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 48, "length": 14 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What time do you start serving breakfast?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Train"
+      },
+      {
+        "text": "When do you start serving customers in the morning?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 43, "length": 7 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What time do you stop serving customers in the evening?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 47, "length": 7 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can you tell me your store's opening and closing times?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 29, "length": 25 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Are you open on public holidays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 23, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need to reserve a table for a party of 10 for New Year's Eve at 9 PM.",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 41, "length": 2 },
+          { "category": "Date", "offset": 48, "length": 22 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can you help me book a table for a group of 6 for a graduation dinner on January 10th at 7 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 44, "length": 1 },
+          { "category": "Date", "offset": 73, "length": 20 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I would like to make a reservation for a group of 12 for a birthday celebration on February 5th at 8 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 50, "length": 2 },
+          { "category": "Date", "offset": 83, "length": 20 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I reserve a table for a family gathering of 8 on March 15th at 6 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 48, "length": 1 },
+          { "category": "Date", "offset": 53, "length": 18 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need to book a table for a romantic dinner for two on April 20th at 7 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 49, "length": 3 },
+          { "category": "Date", "offset": 56, "length": 18 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I'm craving some sushi, can I order a California roll and a side of edamame",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "I need to order 5 chicken tacos and a side of guacamole",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "I want to order a veggie wrap and a side of sweet potato fries",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Can I get a medium pepperoni pizza and a side of buffalo wings",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "I would like to order a chicken Caesar salad and a side of garlic knots.",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Can you provide me with your business hours for the upcoming week?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Is there a specific time that you open on Saturdays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "What time do you close on Sundays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Do you have any special holiday hours?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Can you give me your operating hours for the week?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Can you help me reserve a table for a group of 10 on September 1st at 7 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "I need to book a table for a business dinner on August 15th at 8 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Can I make a table reservation for 7 people on July 4th at 6 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "I would like to reserve a table for a special occasion on June 10th at 7 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "Could you help me make a reservation for a party of five on May 1st at 6:30 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [],
+        "dataset": "Test"
+      },
+      {
+        "text": "When do you close on weekdays?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 21, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can you tell me your opening hours for today?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 39, "length": 5 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What are your hours on Friday?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 23, "length": 6 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Are you open on weekends?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 16, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "What time do you open tomorrow?",
+        "language": "en-us",
+        "intent": "CheckOpeningHours",
+        "entities": [
+          { "category": "Date", "offset": 22, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I'd like to order a chocolate cake for dessert, 3 burgers, 2 fries and a 10pc chicken nugget",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 18, "length": 1 },
+          { "category": "Dish", "offset": 20, "length": 14 },
+          { "category": "Number", "offset": 48, "length": 1 },
+          { "category": "Dish", "offset": 50, "length": 7 },
+          { "category": "Number", "offset": 59, "length": 1 },
+          { "category": "Dish", "offset": 61, "length": 5 },
+          { "category": "Number", "offset": 71, "length": 1 },
+          { "category": "Dish", "offset": 73, "length": 19 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Please send me a cheeseburger and fries",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 15, "length": 1 },
+          { "category": "Dish", "offset": 17, "length": 12 },
+          { "category": "Dish", "offset": 34, "length": 5 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I want to order 3 spaghetti carbonara",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 16, "length": 1 },
+          { "category": "Dish", "offset": 18, "length": 19 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I get two Caesar salads and a lemonade",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 10, "length": 3 },
+          { "category": "Dish", "offset": 14, "length": 13 },
+          { "category": "Number", "offset": 32, "length": 1 },
+          { "category": "Dish", "offset": 34, "length": 8 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I would like to order a Margherita pizza",
+        "language": "en-us",
+        "intent": "OrderFood",
+        "entities": [
+          { "category": "Number", "offset": 22, "length": 1 },
+          { "category": "Dish", "offset": 24, "length": 16 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Reserve a table for me on the 15th at 5 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Date", "offset": 30, "length": 12 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Please book a table for next Saturday at 6 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Date", "offset": 24, "length": 21 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I need a table for two on Friday night",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 19, "length": 3 },
+          { "category": "Date", "offset": 23, "length": 15 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "Can I reserve a table for three on April 20th at 8 PM?",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Number", "offset": 26, "length": 5 },
+          { "category": "Date", "offset": 35, "length": 18 }
+        ],
+        "dataset": "Train"
+      },
+      {
+        "text": "I want to book a table for tomorrow at 7 PM",
+        "language": "en-us",
+        "intent": "BookTable",
+        "entities": [
+          { "category": "Date", "offset": 27, "length": 16 }
+        ],
+        "dataset": "Train"
+      }
+    ]
+  }
+}
