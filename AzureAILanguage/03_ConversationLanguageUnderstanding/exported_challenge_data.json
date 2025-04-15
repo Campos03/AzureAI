@@ -1,0 +1,1337 @@
+{
+    "projectFileVersion": "2023-04-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0.0,
+            "normalizeCasing": false,
+            "augmentDiacritics": false
+        },
+        "projectName": "CLU_Challenge",
+        "multilingual": false,
+        "description": "travel CLU",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "Book"
+            },
+            {
+                "category": "Cancel"
+            }
+        ],
+        "entities": [
+            {
+                "category": "Date",
+                "compositionSetting": "combineComponents",
+                "prebuilts": [
+                    {
+                        "category": "DateTime"
+                    }
+                ]
+            },
+            {
+                "category": "Hotel",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Location",
+                "compositionSetting": "combineComponents",
+                "prebuilts": [
+                    {
+                        "category": "Geography.Location"
+                    }
+                ]
+            },
+            {
+                "category": "NumOfRooms",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "NumOfTickets",
+                "compositionSetting": "combineComponents"
+            }
+        ],
+        "utterances": [
+            {
+                "text": "Let me go somewhere",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to go",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Let's go",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need to take a personal day.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to take some time off work.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I don't have any specific plans for the future.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I have no interest in going out tonight",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am not sure what to do with my free time",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I don't have any plans for the summer",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I have no idea what to do this weekend",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am taking a mental health day to take care of myself.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am going on a spa day to unwind and de-stress",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am going on a retreat to rejuvenate myself",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am taking some time off to recharge",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I have been working hard and need some time off",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need a break.",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "It's a holiday in a few weeks. I want to go travel",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need some rest and am going on a trip",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "My family and I are going on a vacation",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Its a holiday tomorrow",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "What are the best hotels?",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "My family and I are going on a vacation",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "I want to travel",
+                "language": "en-us",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "Remove my 2 room reservations at the Grand Plaza Hotel in New York",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 10,
+                        "length": 6
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 37,
+                        "length": 17
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 58,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "Cancel my 2 tickets to Frankfurt.",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 10,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 23,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I would like to revoke my 3 flight tickets to Sydney for June 20 and also revoke my reservation for 3 rooms at Park Hyatt Sydney. Could you please help with the revocation and provide any necessary information?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 26,
+                        "length": 16
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 46,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 57,
+                        "length": 7
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 100,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 111,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need to cancel my 2 flight tickets to London for May 15 and also terminate my reservation for 2 rooms at The Savoy Hotel. Could you please assist with the cancellation process and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 20,
+                        "length": 16
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 40,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 51,
+                        "length": 6
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 96,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 111,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I would like to abort my family trip",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "I would like you to terminate the contract",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "I would like to request a cancellation of my flight and hotel booking",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need to annul my 4 flight tickets to Tokyo for June 15 and also annul my reservation for 2 rooms at The Ritz-Carlton, Tokyo. Could you please help with the annulment process and provide confirmation?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 19,
+                        "length": 16
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 39,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 49,
+                        "length": 7
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 91,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 102,
+                        "length": 16
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 120,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to call off my 7 tickets to New York City for November 5 and also call off my reservation for 2 rooms at The St. Regis New York. Could you please assist with the cancellation and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 22,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 35,
+                        "length": 13
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 53,
+                        "length": 10
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 101,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 112,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to revoke 1 flight ticket to the Maldives for October 10 and also revoke my reservation for 2 rooms at One & Only Reethi Rah. Could you please help with the revocation and provide any necessary information?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 23,
+                        "length": 15
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 46,
+                        "length": 8
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 59,
+                        "length": 10
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 105,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 116,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to cancel my 3 tickets to Paris for August 5 and also terminate my reservation for 3 rooms at Four Seasons Hotel George V. Could you please assist with the cancellation process and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 20,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 33,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 43,
+                        "length": 8
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 90,
+                        "length": 7
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 101,
+                        "length": 27
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to call off my reservation for 2 rooms at The St. Regis New York for November 5. Could you please assist with the cancellation and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 38,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 49,
+                        "length": 13
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 63,
+                        "length": 8
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 76,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to revoke my reservation for 2 rooms at One & Only Reethi Rah in the Maldives for October 10. Could you please help with the revocation and provide any necessary information?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 42,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 53,
+                        "length": 21
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 82,
+                        "length": 8
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 95,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to terminate my reservation for 3 rooms at Four Seasons Hotel George V in Paris for November 5. Could you please assist with the termination process and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 39,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 50,
+                        "length": 27
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 81,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 91,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to call off my 4 tickets to Tokyo for July 10. Could you please assist with the cancellation and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 22,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 35,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 45,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to revoke my 3 tickets to Sydney for June 20. Could you please help with the revocation and provide any necessary information?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 26,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 39,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 50,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to terminate my 2 tickets to London for May 15. Could you please assist with the termination process and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 23,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 36,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 47,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to call off the 3 tickets to Sydney for June 20. Could you please help with the cancellation and provide any necessary information?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 29,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 42,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 53,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need to cancel my 2 tickets to London for May 15. Could you please assist with the cancellation process and confirm the details?",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 20,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 33,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 44,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to invalidate the booking I made",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am aborting my flight reservation",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Terminate my flight and hotel booking",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to rescind my flight booking",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Cancel my hotel reservation",
+                "language": "en-us",
+                "intent": "Cancel",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to book 3 tickets to Sydney for June 20. Could you please confirm the availability and assist with the booking?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 21,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 34,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 45,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need 2 tickets to London for May 15. Can you check the availability and help with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need 3 rooms at Four Seasons Hotel George V in Paris for November 5. Could you please check the availability and help with the booking?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 7,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 18,
+                        "length": 27
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 49,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 59,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I would like to book 2 rooms at One & Only Reethi Rah in the Maldives for October 10. Could you please confirm the availability and assist with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 21,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 32,
+                        "length": 21
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 61,
+                        "length": 8
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 74,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I want 2 tickets to New York City for November 5 and need 2 rooms at The St. Regis New York. Could you please check the availability for both and help with the bookings?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 13
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 38,
+                        "length": 10
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 58,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 69,
+                        "length": 13
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 83,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need 4 tickets to Bali for October 10 and would like to book 3 rooms at The Oberoi Beach Resort, Bali. Can you confirm the availability for both and assist with the reservations?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 4
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 29,
+                        "length": 10
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 63,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 74,
+                        "length": 4
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 78,
+                        "length": 6
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 84,
+                        "length": 7
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 91,
+                        "length": 6
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 99,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I want 6 tickets to Sydney for September 20 and need 3 rooms at Four Seasons Hotel Sydney. Could you please confirm the availability for both and assist with the reservations?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 12
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 53,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 64,
+                        "length": 25
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need 2 tickets to Paris for August 5 and want to reserve 2 rooms at The Plaza Hotel, Paris. Can you check the availability for both and help with the bookings?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 30,
+                        "length": 8
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 59,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 70,
+                        "length": 22
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to book 4 tickets to Dubai for July 10 and need 4 rooms at Burj Al Arab Jumeirah. Could you provide information on the available flights and rooms, and assist with the booking process?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 21,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 34,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 44,
+                        "length": 7
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 61,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 72,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need 3 tickets to Tokyo for June 15 and would like to book 2 rooms at The Ritz-Carlton, Tokyo. Can you confirm the availability for both and help with the reservations?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 30,
+                        "length": 7
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 61,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 72,
+                        "length": 23
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want 5 tickets to Rome for next month and need 3 rooms at The Ritz-Carlton, Rome. Could you please check the availability for both and assist with the bookings?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 4
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 29,
+                        "length": 10
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 49,
+                        "length": 7
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 60,
+                        "length": 22
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want 6 tickets to Sydney for September 20. Could you please confirm the availability and assist with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need 2 tickets to Paris for August 5. Can you check the availability and help with the booking?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 30,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to book 4 tickets to Dubai for July 10. Could you provide information on the available flights and assist with the booking process?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 21,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 34,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 44,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need 3 tickets to Tokyo for June 15. Can you confirm the availability and help with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 30,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want 5 tickets to Rome for next month. Could you please check the availability and assist with the booking?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfTickets",
+                        "offset": 7,
+                        "length": 9
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 4
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 29,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am planning to stay at Hotel de Glace in Quebec City on December 25. I need two rooms. Could you please confirm the availability and help with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "Hotel",
+                        "offset": 25,
+                        "length": 14
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 43,
+                        "length": 6
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 58,
+                        "length": 11
+                    },
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 78,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to reserve three rooms at the Mandarin Oriental in Bangkok for September 20. Could you assist with the booking process and confirm the availability?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 24,
+                        "length": 11
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 43,
+                        "length": 17
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 64,
+                        "length": 7
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 76,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need one room at The Oberoi Udaivilas in Udaipur for August 5. Could you please provide information on the types of rooms available and help with the booking?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 7,
+                        "length": 8
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 19,
+                        "length": 20
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 43,
+                        "length": 7
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 55,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need four rooms at The Plaza Hotel in New York City for July 10. Can you check if these rooms are available and assist with the reservation?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 7,
+                        "length": 10
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 21,
+                        "length": 15
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 40,
+                        "length": 13
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 58,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to book two rooms at The Ritz-Carlton, Tokyo for June 15. Could you please confirm availability and provide the booking details?",
+                "language": "en-us",
+                "intent": "Book",
+                "entities": [
+                    {
+                        "category": "NumOfRooms",
+                        "offset": 21,
+                        "length": 9
+                    },
+                    {
+                        "category": "Hotel",
+                        "offset": 34,
+                        "length": 16
+                    },
+                    {
+                        "category": "Location",
+                        "offset": 52,
+                        "length": 5
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 62,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            }
+        ]
+    }
+}

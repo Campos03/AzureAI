@@ -1,0 +1,936 @@
+{
+    "projectFileVersion": "2023-04-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0.0,
+            "normalizeCasing": false,
+            "augmentDiacritics": false
+        },
+        "projectName": "CLU-Sample-Python",
+        "multilingual": false,
+        "description": "Sample project made in Python",
+        "language": "en"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "BookTable"
+            },
+            {
+                "category": "OrderFood"
+            },
+            {
+                "category": "None"
+            }
+        ],
+        "entities": [
+            {
+                "category": "Date",
+                "compositionSetting": "combineComponents",
+                "prebuilts": [
+                    {
+                        "category": "DateTime"
+                    }
+                ]
+            },
+            {
+                "category": "Dish",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Number",
+                "compositionSetting": "combineComponents",
+                "prebuilts": [
+                    {
+                        "category": "Quantity.Number"
+                    }
+                ]
+            }
+        ],
+        "utterances": [
+            {
+                "text": "Can you help me book a table for a group of 4 for a special occasion on September 20th at 6 PM?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 44,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 72,
+                        "length": 22
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to reserve a table for two people at 7 PM tomorrow.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 36,
+                        "length": 3
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 50,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need a table for 5 people on October 15th at 8 PM.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 19,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 20
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I book a table for a birthday party on June 10th?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 11,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 43,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you reserve a table for 3 people at 6:30 PM tonight?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 28,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 40,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I book a table for 6 people on December 24th at 7 PM?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 23,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 35,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'd like to book a table for 8 people this Friday at 7 PM.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 29,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 43,
+                        "length": 14
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you help me reserve a table for 10 guests on March 15th at 5 PM?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 36,
+                        "length": 2
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 49,
+                        "length": 18
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need a table for 4 people at 8 PM on Saturday.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 19,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Please book a table for 2 at 6 PM next Wednesday.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 24,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 29,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to reserve a table for 5 people on July 4th at 7 PM.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 30,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 42,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I get a table for 3 at 9 PM tomorrow night?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 22,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 27,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'd like to book a table for 7 people at 8 PM on August 20th.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 29,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 41,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can you reserve a table for 12 people at 6:30 PM on New Year's Eve?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 28,
+                        "length": 2
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 41,
+                        "length": 25
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need a table for 6 people at 7 PM on Christmas Day.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 19,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I book a table for 4 people at 7 PM on April 20th?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 23,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 35,
+                        "length": 18
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need a table for 2 people at 6:30 PM on May 15th.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 19,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 31,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "Please reserve a table for 5 people at 8 PM on June 10th.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 27,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 39,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I'd like to book a table for 3 people at 7 PM on July 4th.",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 29,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 41,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "Can you help me reserve a table for 6 people at 9 PM on Christmas Eve?",
+                "intent": "BookTable",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 36,
+                        "length": 1
+                    },
+                    {
+                        "category": "Date",
+                        "offset": 48,
+                        "length": 22
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I'd like to order a pizza and a salad for delivery.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 18,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 30,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 32,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I get 10 burger and fries for takeout?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 10,
+                        "length": 2
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 13,
+                        "length": 6
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 24,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to order 5 sushi, 6 miso soup, and 7 shrimp tempura for lunch.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 16,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 18,
+                        "length": 5
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 25,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 27,
+                        "length": 9
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 42,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 44,
+                        "length": 14
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Please bring for my family the whole chicken, 2 spaghetti meals, and 3 macaroni salads.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Dish",
+                        "offset": 31,
+                        "length": 13
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 46,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 48,
+                        "length": 15
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 69,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 71,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I would like to order 10 cheeseburgers.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 22,
+                        "length": 2
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 25,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'd like to order 2 pizzas and 3 sodas for delivery.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 18,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 20,
+                        "length": 6
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 31,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 33,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I get 4 burgers and 2 fries for takeout?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 10,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 12,
+                        "length": 7
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 24,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 26,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to order 1 sushi roll and 2 miso soups for lunch.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 16,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 18,
+                        "length": 10
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 33,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 35,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Please bring 3 large pizzas and 5 garlic breads for dinner.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 13,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 15,
+                        "length": 12
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 32,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 34,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'd like to order 6 tacos and 4 burritos for pickup.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 18,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 30,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 32,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I order 2 bowls of ramen and 3 spring rolls for delivery?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 12,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 14,
+                        "length": 14
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 33,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 35,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I need 5 cheeseburgers and 2 milkshakes for takeout.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 7,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 9,
+                        "length": 13
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 27,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 29,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Please deliver 3 pepperoni pizzas and 4 bottles of soda.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 15,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 17,
+                        "length": 16
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 38,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 40,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "I'd like to order 2 chicken sandwiches and 3 salads.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 18,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 20,
+                        "length": 18
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 43,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 45,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I get 1 large pizza and 2 sides of garlic bread?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 10,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 12,
+                        "length": 11
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 28,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 30,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Can I order 3 pizzas and 2 sodas for delivery?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 12,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 14,
+                        "length": 6
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 25,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 27,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I need 4 burgers and 3 fries for takeout.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 7,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 9,
+                        "length": 7
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 21,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 23,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I'd like to order 2 chicken sandwiches and 1 salad.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 18,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 20,
+                        "length": 18
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 43,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 45,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "Can you deliver 5 pepperoni pizzas and 3 bottles of soda?",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 16,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 18,
+                        "length": 16
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 39,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 41,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "text": "I want to order 6 tacos and 4 burritos for pickup.",
+                "intent": "OrderFood",
+                "entities": [
+                    {
+                        "category": "Number",
+                        "offset": 16,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 18,
+                        "length": 5
+                    },
+                    {
+                        "category": "Number",
+                        "offset": 28,
+                        "length": 1
+                    },
+                    {
+                        "category": "Dish",
+                        "offset": 30,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Test"
+            }
+        ]
+    }
+}
