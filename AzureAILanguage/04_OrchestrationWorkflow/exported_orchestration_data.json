@@ -1,0 +1,45 @@
+{
+    "projectFileVersion": "2023-04-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Orchestration",
+        "settings": {
+            "confidenceThreshold": 0.0,
+            "normalizeCasing": false,
+            "augmentDiacritics": false
+        },
+        "projectName": "OrchestrationWorkflow",
+        "multilingual": false,
+        "description": "sample orchestration workflow",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Orchestration",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "Intent_CLU",
+                "orchestration": {
+                    "targetProjectKind": "Conversation",
+                    "conversationOrchestration": {
+                        "projectName": "MyProject1",
+                        "deploymentName": ""
+                    }
+                }
+            },
+            {
+                "category": "Intent_QA",
+                "orchestration": {
+                    "targetProjectKind": "QuestionAnswering",
+                    "questionAnsweringOrchestration": {
+                        "projectName": "SurfaceProject"
+                    }
+                }
+            }
+        ],
+        "entities": [],
+        "utterances": []
+    }
+}
