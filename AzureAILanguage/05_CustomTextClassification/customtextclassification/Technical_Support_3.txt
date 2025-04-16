@@ -1,0 +1,1 @@
+I can't connect to the Wi-Fi network. I've entered the correct password, but it keeps saying 'Unable to connect.' Other devices are connecting fine to the same network.
