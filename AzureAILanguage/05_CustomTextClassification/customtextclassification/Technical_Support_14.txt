@@ -1,0 +1,1 @@
+The external hard drive is not recognized. I've tried different USB ports and cables, but my computer doesn't detect the drive at all.

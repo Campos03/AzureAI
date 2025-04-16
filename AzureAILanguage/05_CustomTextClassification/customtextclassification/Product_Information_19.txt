@@ -1,0 +1,1 @@
+What is the maximum capacity of this product? I want to know how much data it can handle before running into issues.

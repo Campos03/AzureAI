@@ -1,0 +1,1 @@
+I received a notification about a payment failure. I want to know what caused it and how to resolve the issue.

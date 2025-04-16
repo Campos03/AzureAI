@@ -1,0 +1,1 @@
+I am getting a blue screen error. It happens randomly, and the message says 'Critical Process Died.' I don't know what to do.

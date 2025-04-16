@@ -1,0 +1,1 @@
+I can't access my files after the last update. The system says the files are corrupted, and I need to restore them from a backup.
