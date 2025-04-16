@@ -10,478 +10,383 @@
         "description": "classifies emails into categories",
         "language": "en-us",
         "settings": {}
-  },
-  "assets": {
-    "projectKind": "customSingleLabelClassification",
-    "classes": [
-      {
-        "category": "Account_Management"
-      },
-      {
-        "category": "Billing_and_Payments"
-      },
-      {
-        "category": "Order_and_Shipping"
-      },
-      {
-        "category": "Product_Information"
-      },
-      {
-        "category": "Technical_Support"
-      }
-    ],
-    "documents": [
-        {
-            "location": "Account_Management_1.txt",
-            "language": "en-us",
-            "classes": [
+    },
+    "assets": {
+        "projectKind": "customSingleLabelClassification",
+        "classes": [
             {
                 "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_2.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_3.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_4.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_5.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_6.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_7.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_8.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_9.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Account_Management_10.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Account_Management"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_1.txt",
-            "language": "en-us",
-            "classes": [
+            },
             {
                 "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_2.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_3.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_4.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_5.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_6.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_7.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_8.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_9.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Billing_and_Payments_10.txt",
-            "language": "en-us",
-            "classes": [
-            {
-                "category": "Billing_and_Payments"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_1.txt",
-            "language": "en-us",
-            "classes": [
+            },
             {
                 "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_2.txt",
-            "language": "en-us",
-            "classes": [
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_3.txt",
-            "language": "en-us",
-            "classes": [
+                "category": "Product_Information"
+            },
             {
-                "category": "Order_and_Shipping"
+                "category": "Technical_Support"
             }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_4.txt",
-            "language": "en-us",
-            "classes": [
+        ],
+        "documents": [
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_5.txt",
-            "language": "en-us",
-            "classes": [
+                "location": "Account_Management_1.txt",
+                "language": "en-us",
+                "class":
+                    {
+                        "category": "Account_Management"
+                    }
+                
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_6.txt",
-            "language": "en-us",
-            "classes": [
+                "location": "Account_Management_2.txt",
+                "language": "en-us",
+                "class": 
+                    {
+                        "category": "Account_Management"
+                    }
+                
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_7.txt",
-            "language": "en-us",
-            "classes": [
+                "location": "Account_Management_3.txt",
+                "language": "en-us",
+                "class": 
+                    {
+                        "category": "Account_Management"
+                    }
+                
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_8.txt",
-            "language": "en-us",
-            "classes": [
+                "location": "Account_Management_4.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-            "location": "Order_and_Shipping_9.txt",
-            "language": "en-us",
-            "classes": [
+                "location": "Account_Management_5.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-                "category": "Order_and_Shipping"
-            }
-            ]
-        },
-        {
-        "location": "Order_and_Shipping_10.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Account_Management_6.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-            "category": "Order_and_Shipping"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_1.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Account_Management_7.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_2.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Account_Management_8.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_3.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Account_Management_9.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_4.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Account_Management_10.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Account_Management"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_5.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_1.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_6.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_2.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_7.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_3.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_8.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_4.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_9.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_5.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-        "location": "Product_Information_10.txt",
-        "language": "en-us",
-        "classes": [
+                "location": "Billing_and_Payments_6.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
             {
-            "category": "Product_Information"
-            }
-        ]
-        },
-        {
-            "location": "Technical_Support_1.txt",
-            "language": "en-us",
-            "classes": [
-                {
+                "location": "Billing_and_Payments_7.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
+            {
+                "location": "Billing_and_Payments_8.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
+            {
+                "location": "Billing_and_Payments_9.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
+            {
+                "location": "Billing_and_Payments_10.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Billing_and_Payments"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_1.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_2.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_3.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_4.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_5.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_6.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_7.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_8.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_9.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Order_and_Shipping_10.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Order_and_Shipping"
+                }
+            },
+            {
+                "location": "Product_Information_1.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_2.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_3.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_4.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_5.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_6.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_7.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_8.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_9.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Product_Information_10.txt",
+                "language": "en-us",
+                "class": {
+                    "category": "Product_Information"
+                }
+            },
+            {
+                "location": "Technical_Support_1.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_2.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_2.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_3.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_3.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_4.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_4.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_5.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_5.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_6.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_6.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_7.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_7.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_8.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_8.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_9.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_9.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        },
-        {
-            "location": "Technical_Support_10.txt",
-            "language": "en-us",
-            "classes": [
-                {
+            },
+            {
+                "location": "Technical_Support_10.txt",
+                "language": "en-us",
+                "class": {
                     "category": "Technical_Support"
                 }
-            ]
-        }
-      
-    ]
-  }
+            }
+        ]
+    }
 }
