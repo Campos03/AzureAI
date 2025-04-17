@@ -1,0 +1,18 @@
+import yfinance as yf
+import pandas as pd
+
+# Define the stock tickers
+tickers = ['NVDA', 'TSLA', 'MSFT']
+
+# Define the start and end dates
+end_date = pd.Timestamp.now()
+start_date = end_date - pd.DateOffset(years=3)
+
+# Download the stock price data for the defined tickers and dates
+stock_data = {ticker: yf.download(ticker, start=start_date, end=end_date) for ticker in tickers}
+
+# Save the data to CSV files for verification
+for ticker, data in stock_data.items():
+    data.to_csv(f'{ticker}_stock_data.csv')
+
+print('Data download complete and saved to CSV files.')

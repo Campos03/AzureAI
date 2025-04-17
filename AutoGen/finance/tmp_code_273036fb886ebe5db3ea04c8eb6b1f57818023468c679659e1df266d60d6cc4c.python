@@ -1,0 +1,8 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load stock price data from the CSV files
+tickers = ['NVDA', 'TSLA', 'MSFT']
+for ticker in tickers:
+    df = pd.read_csv(f'{ticker}_stock_data.csv')
+    print(df.head())

@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Define the stock tickers
+tickers = ['NVDA', 'TSLA', 'MSFT']
+
+# Load stock price data from the CSV files
+stock_data = {}
+for ticker in tickers:
+    df = pd.read_csv(f'{ticker}_stock_data.csv', skiprows=2, names=['Date', 'Close', 'High', 'Low', 'Open', 'Volume'], parse_dates=['Date'], date_parser=pd.to_datetime)
+    stock_data[ticker] = df.set_index('Date')
+
+# Plot stock price data
+plt.figure(figsize=(14, 7))
+
+for ticker in tickers:
+    plt.plot(stock_data[ticker]['Close'], label=ticker)
+
+plt.title('Stock Prices of NVIDIA, Tesla, and Microsoft Over the Last 3 Years')
+plt.xlabel('Date')
+plt.ylabel('Stock Price (USD)')
+plt.legend()
+plt.grid(True)
+
+# Save the figure
+plt.savefig('stock_prices.png')
+plt.show()

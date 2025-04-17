@@ -1,0 +1,43 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Revenue and profit data (in billions of USD)
+data = {
+    'Company': ['NVIDIA', 'Tesla', 'Microsoft'],
+    '2020_Revenue': [10.92, 31.53, 143.02],
+    '2020_Profit': [2.8, 0.72, 44.28],
+    '2021_Revenue': [16.68, 53.82, 168.09],
+    '2021_Profit': [4.33, 5.52, 61.27],
+    '2022_Revenue': [26.91, 81.46, 198.27],
+    '2022_Profit': [9.75, 12.56, 72.74],
+}
+
+# Convert to DataFrame
+financials = pd.DataFrame(data)
+financials.set_index('Company', inplace=True)
+financials = financials.T  # Transpose for plotting
+
+# Separate revenue and profit data
+revenue_data = financials.loc[['2020_Revenue', '2021_Revenue', '2022_Revenue']]
+profit_data = financials.loc[['2020_Profit', '2021_Profit', '2022_Profit']]
+
+# Plot revenue and profit data
+fig, ax = plt.subplots(1, 2, figsize=(18, 8), sharey=True)
+
+# Plot revenue data
+revenue_data.plot(kind='bar', ax=ax[0])
+ax[0].set_title('Revenue Comparison (2020-2022)')
+ax[0].set_ylabel('Revenue (Billion USD)')
+ax[0].set_xlabel('Year')
+ax[0].grid(True)
+
+# Plot profit data
+profit_data.plot(kind='bar', ax=ax[1])
+ax[1].set_title('Profit Comparison (2020-2022)')
+ax[1].set_ylabel('Profit (Billion USD)')
+ax[1].set_xlabel('Year')
+ax[1].grid(True)
+
+# Save the figure
+plt.savefig('revenue_profit_comparison.png')
+plt.show()
