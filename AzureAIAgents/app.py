@@ -1,10 +1,11 @@
 import chainlit as cl
 import json
 from typing import Any, Callable, Set, Dict, List, Optional
-import os
+import os, time
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 from azure.ai.projects.models import FunctionTool, ToolSet, AzureAISearchTool, AzureAISearchQueryType
+from azure.ai.projects.models import FunctionTool, ToolSet, RequiredFunctionToolCall, SubmitToolOutputsAction, ToolOutput
 
 
 # Define the function to fetch weather information
@@ -106,8 +107,11 @@ def reformat_citations(content_block):
     return paragraph
 
 # Define the function to run the agent
-def run_agent(user_input, project_client, thread, agent):  
-    # Step 3: Add a message to the thread  
+def run_agent(user_input, project_client, thread, agent): 
+
+    functions = FunctionTool(user_functions)
+
+    # Add a message to the thread  
     message = project_client.agents.create_message(
         thread_id=thread.id,
         role="user",
@@ -115,30 +119,67 @@ def run_agent(user_input, project_client, thread, agent):
     )
     print(f"Created message, ID: {message.id}")
 
-    # Step 4 & 5: Create and process agent run in thread with tools
-    run = project_client.agents.create_and_process_run(thread_id=thread.id, agent_id=agent.id)
+    # Step 4: Run the agent
+    run = project_client.agents.create_run(thread_id=thread.id, agent_id=agent.id)
+    print(f"Created run, ID: {run.id}")
+
+    # Step 5: Check the Run Status
+    while run.status in ["queued", "in_progress", "requires_action"]:
+        time.sleep(1)
+        run = project_client.agents.get_run(thread_id=thread.id, run_id=run.id)
+
+        # Print the current status of the run
+        print(f"Current run status: {run.status}")
+
+        if run.status == "requires_action" and isinstance(run.required_action, SubmitToolOutputsAction):
+            tool_calls = run.required_action.submit_tool_outputs.tool_calls
+            if not tool_calls:
+                print("No tool calls provided - cancelling run")
+                project_client.agents.cancel_run(thread_id=thread.id, run_id=run.id)
+                break
+
+            tool_outputs = []
+            for tool_call in tool_calls:
+                if isinstance(tool_call, RequiredFunctionToolCall):
+                    try:
+                        print(f"Executing tool call: {tool_call}")
+                        output = functions.execute(tool_call)
+                        tool_outputs.append(
+                            ToolOutput(
+                                tool_call_id=tool_call.id,
+                                output=output,
+                            )
+                        )
+                    except Exception as e:
+                        print(f"Error executing tool_call {tool_call.id}: {e}")
+
+            print(f"Tool outputs: {tool_outputs}")
+            if tool_outputs:
+                project_client.agents.submit_tool_outputs_to_run(
+                    thread_id=thread.id, run_id=run.id, tool_outputs=tool_outputs
+                )
     
-    if run.status == "failed":
-        print(f"Run failed: {run.last_error}")
+        if run.status == "failed":
+            print(f"Run failed: {run.last_error}")
 
-    # Step 6: Display the Agent's Response
-    elif run.status == 'completed':
-        # Fetch all messages in the thread
-        messages = project_client.agents.list_messages(thread_id=thread.id)
-        if messages.data:
-            agent_message = messages.data[0]  # Get the last assistant message
-            content_block = agent_message.content[0].text
+        # Step 6: Display the Agent's Response
+        elif run.status == 'completed':
+            # Fetch all messages in the thread
+            messages = project_client.agents.list_messages(thread_id=thread.id)
+            if messages.data:
+                agent_message = messages.data[0]  # Get the last assistant message
+                content_block = agent_message.content[0].text
 
-            # Check if there are annotations before reformatting the response
-            if content_block.get("annotations"):
-                # Reformat the response to replace placeholders with citation titles
-                agent_response = reformat_citations(content_block)
+                # Check if there are annotations before reformatting the response
+                if content_block.get("annotations"):
+                    # Reformat the response to replace placeholders with citation titles
+                    agent_response = reformat_citations(content_block)
+                else:
+                    agent_response = content_block["value"]
+
+                print(f"Agent Response: {agent_response}")
             else:
-                agent_response = content_block["value"]
-
-            print(f"Agent Response: {agent_response}")
-        else:
-            print("No messages found.")
+                print("No messages found.")
     
     return agent_response
 
